@@ -42,10 +42,20 @@ const formulasSchema = new Schema({
         type: String,
         required: false
     },
+    materialLen:{
+        type: String,
+        required: false
+    },
     paciente: {
         type: Schema.ObjectId,
         ref: "usuarios",
         required: true,
+
+    },
+    Lente: {
+        type: Schema.ObjectId,
+        ref: "Lentes",
+        required: false,
 
     },
     estado:{

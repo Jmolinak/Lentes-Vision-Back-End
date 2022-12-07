@@ -1,30 +1,33 @@
 const Formulas = require('../models/formulas.models');
-const uploadFromBuffer = require("../util/middlewares/files/uploadFiles");
+const Lente = require('../models/lentesMat.model');
 
 
 const registrarFormula = async (req, res) => {
 
     try {
-    const formula= req.body; 
-    console.log("MArca 1")
-console.log(req.user._id);
-formula.paciente=req.user._id;
-console.log("Antes del try carch") 
-console.log(formula)
+        const formula = req.body;
+        const lentema = formula.materialLen;
+        formula.paciente = req.user._id;
         await Formulas.create(formula);
-        res.status(200).json({
-            message: 'Formula Creeade',
-            ok:true
-        });
-     
+        const result = await Lente.findOne({ Nombre: lentema });
+        if (!result) {
+            return res.status(400).json({
+                ok: false,
+                data: "El Material elegido no esta registrado"
+            })
+        } else {
+            return res.status(200).json({
+                ok: true,
+                data: result
+            })
+        }
     } catch (error) {
-        console.log("Cartch  Formula")
-    res.status(400).json({
-        err:error    
-    })
-        
+        res.status(400).json({
+            err: error
+        })
+
     }
-       
+
 }
 
 module.exports = { registrarFormula };
