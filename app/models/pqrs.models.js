@@ -4,31 +4,31 @@ const Schema = mongoose.Schema;
 const pqrsSchema = new Schema({
 Nombre:{
     type:String,
-    required:true
+    required:false
 },
 Apellido:{
     type:String,
-    required:true
+    required:false
 },
 Direccion:{
     type:String,
-    required:true
+    required:false
 },
 Departamento:{
     type:String,
-    required:true
+    required:false
 },
 DocumentoID:{
     type:String,
-    required:true
+    required:false
 },
 TipoDocIdent:{
     type: String,
-    required:true
+    required:false
 },
 Correo:{
     type:String,
-    required:true
+    required:false
 },
 Telefono:{
     type:String,
@@ -36,11 +36,14 @@ Telefono:{
 },
 Descripcion:{
     type:String,
-    required:true
+    required:false
+},
+Fecha:{
+    type:Date
 }
 });
 
-const pqrs = mongoose.model('pqrs', accountSchema);
+const pqrs = mongoose.model('pqrs', pqrsSchema);
 module.exports = pqrs;
 
 
