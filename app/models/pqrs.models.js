@@ -13,6 +13,30 @@ Apellido:{
 Direccion:{
     type:String,
     required:true
+},
+Departamento:{
+    type:String,
+    required:true
+},
+DocumentoID:{
+    type:String,
+    required:true
+},
+TipoDocIdent:{
+    type: String,
+    required:true
+},
+Correo:{
+    type:String,
+    required:true
+},
+Telefono:{
+    type:String,
+    required:false
+},
+Descripcion:{
+    type:String,
+    required:true
 }
 });
 
