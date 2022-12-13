@@ -24,7 +24,7 @@ const updatePhotoProfile = async (req, res) => {
 
         if (!photoUpdate) {
             //console.log("Creando la photo")
-            console.log(req.user._id);
+           // console.log(req.user._id);
             await profile.create({
                 idAccount: req.user._id,
                 photoProfile: resultUploadPhoto.url,
@@ -44,7 +44,7 @@ const updatePhotoProfile = async (req, res) => {
 };
 
 const getProfile = async (req, res) => {
-    console.log("En el perfil")
+  //  console.log("En el perfil")
     try{
         
         const profil = await profile.findOne({ idAccount: req.user._id })
@@ -54,14 +54,14 @@ const getProfile = async (req, res) => {
             idAccount: req.user._id,
             photoProfile: 'https://res.cloudinary.com/det18fdki/image/upload/v1670015909/foo/icono_yophog.png',
         });
-        console.log('Creando Perfil '+profile)
+       // console.log('Creando Perfil '+profile)
 
     }
     res.status(200).json({
         ok: true,
         data: profil
     });
-    console.log(profil)
+    //console.log(profil)
 }catch(error){
     res.status(400).json({
         ok:false,
@@ -73,7 +73,7 @@ const getProfile = async (req, res) => {
 
 
 const getProfileimg = async (req, res) => {
-    console.log("En el perfil")
+    //console.log("En el perfil")
     try{
         
         const profil = await profile.findOne({ idAccount: req.user._id })
@@ -83,14 +83,14 @@ const getProfileimg = async (req, res) => {
             idAccount: req.user._id,
             photoProfile: 'https://res.cloudinary.com/det18fdki/image/upload/v1670015909/foo/icono_yophog.png',
         });
-        console.log('Creando Perfil '+profile)
+       // console.log('Creando Perfil '+profile)
 
     }
     res.status(200).json({
         ok: true,
         data: profil
     });
-    console.log(profil)
+   // console.log(profil)
 }catch(error){
     res.status(400).json({
         ok:false,

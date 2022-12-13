@@ -40,7 +40,13 @@ Descripcion:{
 },
 Fecha:{
     type:Date
-}
+},
+paciente: [{
+    type: Schema.ObjectId,
+    ref: "usuario",
+    required: false,
+
+}]
 });
 
 const pqrs = mongoose.model('pqrs', pqrsSchema);

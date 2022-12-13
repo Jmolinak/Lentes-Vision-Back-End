@@ -8,16 +8,16 @@ const login = async (req, res) => {
     
 
     if (!result) {
-        console.log("Marca0");
+       // console.log("Marca0");
         res.status(404).json({
             error: "usuario no Registrado",
         });
     } else {
 
 
-        console.log("Marca1");
+        //console.log("Marca1");
         const isCorrectPassword = await bcrypt.compare(user.password, result.password);
-        console.log("Marca2");
+        //console.log("Marca2");
         if (isCorrectPassword && result.isActive) {
 
             console.log("Marca3");
@@ -36,7 +36,7 @@ const login = async (req, res) => {
             })
 
         } else {
-            console.log("Marca4")
+           // console.log("Marca4")
             res.status(403).json({
                 message: "Usuario o contraseña incorrecta",
             });

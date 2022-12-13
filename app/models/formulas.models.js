@@ -46,12 +46,12 @@ const formulasSchema = new Schema({
         type: String,
         required: false
     },
-    paciente: {
+    paciente: [{
         type: Schema.ObjectId,
-        ref: "usuarios",
+        ref: "usuario",
         required: true,
 
-    },
+    }],
     Lente: {
         type: Schema.ObjectId,
         ref: "Lentes",
