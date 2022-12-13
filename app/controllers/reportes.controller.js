@@ -1,9 +1,6 @@
-const Formulas = require('../models/formulas.models');
-const Account = require('../models/accounts.model.js');
-//const formulasCollection = require('../models/formulas.models');
-const mongoose = require('mongoose');
+
 const formulasCollection = require('../models/accounts.model');
-const PQRS=require('../models/pqrs.models');
+const Contactanos=require('../models/contactenos.models');
 
 
 const getFormulas = async (req, res) => {
@@ -79,7 +76,18 @@ try {
   
 }
 }
+
+const getContactenos= async(req,res)=> {
+  try {
+    const Contactenos = await Contactanos.find();
+    res.send(Contactenos);
+
+  } catch (error) {
+    
+  }
+}
 module.exports = {
   getFormulas,
-  getPQRS
+  getPQRS,
+  getContactenos
 };
