@@ -2,46 +2,39 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const formulasSchema = new Schema({
-    ojoIZ: {
+    axisLeft: {
         type: String,
         required: false
     },
-    ojoDER: {
+    axisRight: {
         type: String,
         required: false
     },
-    cilindroizq: {
+    cylLeft: {
         type: String,
         required: false
     },
-    cilindroder: {
+    cylRight: {
         type: String,
         required: false
     },
-    ejeizq: {
+    dnpLeft: {
         type: String,
         required: false
     },
-    ejeder: {
+    dnpRight: {
         type: String,
         required: false
     },
-    DNPDEr: {
+    esfLeft: {
         type: String,
         required: false
     },
-    DNPiz: {
+    esfRight: {
         type: String,
         required: false
     },
-    esferaDer:{
-        type: String,
-        required: false
-    },
-    esferaIzq:{
-        type: String,
-        required: false
-    },
+  
     materialLen:{
         type: String,
         required: false
